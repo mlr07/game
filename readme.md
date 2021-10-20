@@ -9,7 +9,7 @@ small game that attempts to reproduce a set of classic visual illusions:
 
 illusions 1-3 by [michael bach, university of freiberg, germany](https://michaelbach.de/ot/).
 
-illusions 4 is based on the [muller-lyer illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
+illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
 
 ## game parts
 
