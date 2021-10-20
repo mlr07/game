@@ -5,8 +5,11 @@ small game that attempts to reproduce a set of classic visual illusions:
 1. motion binding
 2. breathing square
 3. hidden bird
+4. arrow lengths
 
-illusions by [michael bach, university of freiberg, germany](https://michaelbach.de/ot/).
+illusions 1-3 by [michael bach, university of freiberg, germany](https://michaelbach.de/ot/).
+
+illusions 4 is based on the [muller-lyer illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
 
 ## game parts
 
