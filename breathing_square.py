@@ -10,6 +10,8 @@ class BreathingSquare(arcade.Window):
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
+        self.b_sqaure = None
+
         self.shape_list = None
 
         arcade.set_background_color(arcade.color.WHITE)
@@ -18,20 +20,23 @@ class BreathingSquare(arcade.Window):
     def setup(self):
         self.shape_list = arcade.ShapeElementList()
 
-        shape = arcade.create_rectangle_filled(self.width/2, 
+        self.b_square = arcade.create_rectangle_filled(self.width/2, 
                                                self.height/2,
                                                200,
                                                200,
                                                arcade.color.BLUE
         )
+        print(self.b_square.center_x)
+        print(self.b_square.center_y)
+        print(self.b_square.tilt_angle)
 
-        self.shape_list.append(shape)
+        #self.shape_list.append(shape)
 
 
     def on_draw(self):
         arcade.start_render()
         
-        self.shape_list.draw()
+        self.b_square.draw()
 
 
     def on_update(self, delta_time):
