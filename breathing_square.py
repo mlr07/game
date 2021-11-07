@@ -4,13 +4,18 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 SCREEN_TITLE = "Breathing Square"
 
+BLUE_SQUARE_SCALE = 2.5
+ORANGE_SQUARE_SCALE = 2
+
 
 class BreathingSquare(arcade.Window):
  
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
-        self.b_sqaure = None
+        self.scene = None
+
+        self.b_square = None
 
         self.shape_list = None
 
@@ -18,25 +23,34 @@ class BreathingSquare(arcade.Window):
 
 
     def setup(self):
-        self.shape_list = arcade.ShapeElementList()
+        
+        self.scene = arcade.Scene()
 
-        self.b_square = arcade.create_rectangle_filled(self.width/2, 
-                                               self.height/2,
-                                               200,
-                                               200,
-                                               arcade.color.BLUE
-        )
+        img_src = "./resources/blue_square.png"
+        self.b_square = arcade.Sprite(img_src, BLUE_SQUARE_SCALE)
+        self.b_square.center_x = self.width/2
+        self.b_square.center_y = self.height/2
+        self.scene.add_sprite("blue_square", self.b_square)
+
+        coords = [[self.width/4,self.height/4],
+                  [self.width*0.75,self.height*0.25],
+                  [self.width*0.25,self.height*0.75],
+                  [self.width*0.75,self.height*0.75]
+        ]
+
+        for coord in coords:
+            sqr = arcade.Sprite("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
+            sqr.position = coord
+            self.scene.add_sprite("orange_square", sqr)
+
         print(self.b_square.center_x)
         print(self.b_square.center_y)
-        print(self.b_square.tilt_angle)
-
-        #self.shape_list.append(shape)
 
 
     def on_draw(self):
         arcade.start_render()
         
-        self.b_square.draw()
+        self.scene.draw()
 
 
     def on_update(self, delta_time):
