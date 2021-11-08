@@ -47,7 +47,7 @@ class BreathingSquare(arcade.Window):
             sqr.position = coord
             self.scene.add_sprite("orange_square", sqr)
 
-        #self.physics_engine = arcade.PhysicsEngineSimple(self.b_square, None)
+        self.physics_engine = arcade.PhysicsEngineSimple(self.b_square, arcade.SpriteList())
 
 
     def on_draw(self):
@@ -57,15 +57,14 @@ class BreathingSquare(arcade.Window):
 
 
     def on_update(self, delta_time):
-        pass
-        #self.physics_engine.update()
-
+        self.physics_engine.update()
+        
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.LEFT or key == arcade.key.A:
-            self.b_square.change_angle = -ANGLE_SPEED
-        elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.b_square.change_angle = ANGLE_SPEED
+        elif key == arcade.key.RIGHT or key == arcade.key.D:
+            self.b_square.change_angle = -ANGLE_SPEED
 
 
     def on_key_release(self, key, key_modifiers):
