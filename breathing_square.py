@@ -4,8 +4,10 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 SCREEN_TITLE = "Breathing Square"
 
-BLUE_SQUARE_SCALE = 2.5
-ORANGE_SQUARE_SCALE = 2
+BLUE_SQUARE_SCALE = 1
+ORANGE_SQUARE_SCALE = 1
+
+ANGLE_SPEED = 5
 
 
 class BreathingSquare(arcade.Window):
@@ -18,6 +20,8 @@ class BreathingSquare(arcade.Window):
         self.b_square = None
 
         self.shape_list = None
+
+        self.physics_engine = None
 
         arcade.set_background_color(arcade.color.WHITE)
 
@@ -43,8 +47,7 @@ class BreathingSquare(arcade.Window):
             sqr.position = coord
             self.scene.add_sprite("orange_square", sqr)
 
-        print(self.b_square.center_x)
-        print(self.b_square.center_y)
+        #self.physics_engine = arcade.PhysicsEngineSimple(self.b_square, None)
 
 
     def on_draw(self):
@@ -55,14 +58,21 @@ class BreathingSquare(arcade.Window):
 
     def on_update(self, delta_time):
         pass
+        #self.physics_engine.update()
 
 
     def on_key_press(self, key, key_modifiers):
-        pass
+        if key == arcade.key.LEFT or key == arcade.key.A:
+            self.b_square.change_angle = -ANGLE_SPEED
+        elif key == arcade.key.RIGHT or key == arcade.key.D:
+            self.b_square.change_angle = ANGLE_SPEED
 
 
     def on_key_release(self, key, key_modifiers):
-        pass
+        if key == arcade.key.LEFT or key == arcade.key.A:
+            self.b_square.change_angle = 0
+        elif key == arcade.key.RIGHT or key == arcade.key.D:
+            self.b_square.change_angle = 0
 
 
 def main():
