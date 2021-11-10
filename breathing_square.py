@@ -8,6 +8,7 @@ BLUE_SQUARE_SCALE = 1
 ORANGE_SQUARE_SCALE = 1
 
 ANGLE_SPEED = 5
+POS_SPEED = 5
 
 
 class BreathingSquare(arcade.Window):
@@ -15,26 +16,22 @@ class BreathingSquare(arcade.Window):
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
-        self.scene = None
+        self.sprite_list = None
 
         self.b_square = None
-
-        self.shape_list = None
-
-        self.physics_engine = None
 
         arcade.set_background_color(arcade.color.WHITE)
 
 
     def setup(self):
         
-        self.scene = arcade.Scene()
+        self.sprite_list = arcade.SpriteList()
 
         img_src = "./resources/blue_square.png"
         self.b_square = arcade.Sprite(img_src, BLUE_SQUARE_SCALE)
         self.b_square.center_x = self.width/2
         self.b_square.center_y = self.height/2
-        self.scene.add_sprite("blue_square", self.b_square)
+        self.sprite_list.append(self.b_square)
 
         coords = [[self.width/4,self.height/4],
                   [self.width*0.75,self.height*0.25],
@@ -45,33 +42,51 @@ class BreathingSquare(arcade.Window):
         for coord in coords:
             sqr = arcade.Sprite("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
             sqr.position = coord
-            self.scene.add_sprite("orange_square", sqr)
+            self.sprite_list.append(sqr)
 
-        self.physics_engine = arcade.PhysicsEngineSimple(self.b_square, arcade.SpriteList())
+        print(len(self.sprite_list))
 
 
     def on_draw(self):
         arcade.start_render()
         
-        self.scene.draw()
+        self.sprite_list.draw()
 
 
     def on_update(self, delta_time):
-        self.physics_engine.update()
-        
+        self.sprite_list.update()
+
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.LEFT or key == arcade.key.A:
             self.b_square.change_angle = ANGLE_SPEED
+
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.b_square.change_angle = -ANGLE_SPEED
+
+        elif key == arcade.key.UP or key == arcade.key.W:
+           self.sprite_list[1].change_x = POS_SPEED
+           self.sprite_list[1].change_y = POS_SPEED
+
+        elif key == arcade.key.DOWN or key == arcade.key.S:
+           self.sprite_list[1].change_x = -POS_SPEED
+           self.sprite_list[1].change_y = -POS_SPEED
 
 
     def on_key_release(self, key, key_modifiers):
         if key == arcade.key.LEFT or key == arcade.key.A:
             self.b_square.change_angle = 0
+
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.b_square.change_angle = 0
+
+        elif key == arcade.key.UP or key == arcade.key.W:
+            self.sprite_list[1].change_x = 0
+            self.sprite_list[1].change_y = 0
+
+        elif key == arcade.key.DOWN or key == arcade.key.S:
+            self.sprite_list[1].change_x = 0
+            self.sprite_list[1].change_y = 0
 
 
 def main():
