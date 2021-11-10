@@ -28,4 +28,9 @@ each illusion will have:
 
 ## ???
 
-
+1. implement orange square movement
+- check for collision or center limit
+- check for window boundary limit
+2. scale blue and orange squares
+3. tweak rotation speed 
+4. make window dimensions square
