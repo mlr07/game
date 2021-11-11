@@ -1,7 +1,7 @@
 import arcade
 
 SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_HEIGHT = 800
 SCREEN_TITLE = "Breathing Square"
 
 BLUE_SQUARE_SCALE = 1
