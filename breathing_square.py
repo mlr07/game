@@ -65,12 +65,24 @@ class BreathingSquare(arcade.Window):
             self.b_square.change_angle = -ANGLE_SPEED
 
         elif key == arcade.key.UP or key == arcade.key.W:
-           self.sprite_list[1].change_x = POS_SPEED
-           self.sprite_list[1].change_y = POS_SPEED
+            self.sprite_list[1].change_x = POS_SPEED
+            self.sprite_list[1].change_y = POS_SPEED
+            self.sprite_list[2].change_x = -POS_SPEED
+            self.sprite_list[2].change_y = POS_SPEED
+            self.sprite_list[3].change_x = POS_SPEED
+            self.sprite_list[3].change_y = -POS_SPEED
+            self.sprite_list[4].change_x = -POS_SPEED
+            self.sprite_list[4].change_y = -POS_SPEED
 
         elif key == arcade.key.DOWN or key == arcade.key.S:
-           self.sprite_list[1].change_x = -POS_SPEED
-           self.sprite_list[1].change_y = -POS_SPEED
+            self.sprite_list[1].change_x = -POS_SPEED
+            self.sprite_list[1].change_y = -POS_SPEED
+            self.sprite_list[2].change_x = POS_SPEED
+            self.sprite_list[2].change_y = -POS_SPEED
+            self.sprite_list[3].change_x = -POS_SPEED
+            self.sprite_list[3].change_y = POS_SPEED
+            self.sprite_list[4].change_x = POS_SPEED
+            self.sprite_list[4].change_y = POS_SPEED
 
 
     def on_key_release(self, key, key_modifiers):
@@ -83,11 +95,23 @@ class BreathingSquare(arcade.Window):
         elif key == arcade.key.UP or key == arcade.key.W:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0
+            self.sprite_list[2].change_x = 0
+            self.sprite_list[2].change_y = 0
+            self.sprite_list[3].change_x = 0
+            self.sprite_list[3].change_y = 0
+            self.sprite_list[4].change_x = 0
+            self.sprite_list[4].change_y = 0
+
 
         elif key == arcade.key.DOWN or key == arcade.key.S:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0
-
+            self.sprite_list[2].change_x = 0
+            self.sprite_list[2].change_y = 0
+            self.sprite_list[3].change_x = 0
+            self.sprite_list[3].change_y = 0
+            self.sprite_list[4].change_x = 0
+            self.sprite_list[4].change_y = 0
 
 def main():
     game = BreathingSquare()
