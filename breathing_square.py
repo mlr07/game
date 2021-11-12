@@ -131,6 +131,7 @@ class BreathingSquare(arcade.Window):
             self.sprite_list[4].change_x = 0
             self.sprite_list[4].change_y = 0
 
+
 def main():
     game = BreathingSquare()
     game.setup()
@@ -138,4 +139,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main)
+    main()
