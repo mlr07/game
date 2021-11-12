@@ -4,11 +4,30 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
 SCREEN_TITLE = "Breathing Square"
 
-BLUE_SQUARE_SCALE = 1
-ORANGE_SQUARE_SCALE = 1
+BLUE_SQUARE_SCALE = 3.5
+ORANGE_SQUARE_SCALE = 2.5
 
-ANGLE_SPEED = 5
-POS_SPEED = 5
+ANGLE_SPEED = 0.5
+POS_SPEED = 0.5
+
+
+class Shape(arcade.Sprite):
+    '''extended class for shapes in illusion'''
+
+    def update(self):
+        '''move the sprite and check for out of bounds'''
+        self.center_x += self.change_x
+        self.center_y += self.change_y
+
+        if self.left < 0:
+            self.left = 0
+        elif self.right > SCREEN_WIDTH-1:
+            self.right = SCREEN_WIDTH-1
+
+        if self.bottom < 0:
+            self.bottom = 0
+        elif self.top > SCREEN_HEIGHT-1:
+            self.top = SCREEN_HEIGHT-1
 
 
 class BreathingSquare(arcade.Window):
@@ -24,7 +43,6 @@ class BreathingSquare(arcade.Window):
 
 
     def setup(self):
-        
         self.sprite_list = arcade.SpriteList()
 
         img_src = "./resources/blue_square.png"
@@ -40,7 +58,7 @@ class BreathingSquare(arcade.Window):
         ]
 
         for coord in coords:
-            sqr = arcade.Sprite("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
+            sqr = Shape("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
             sqr.position = coord
             self.sprite_list.append(sqr)
 
@@ -120,4 +138,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main)
