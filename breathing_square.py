@@ -10,6 +10,10 @@ ORANGE_SQUARE_SCALE = 2.5
 ANGLE_SPEED = 0.75
 POS_SPEED = 0.75
 
+TITLE = "Breathing Square"
+CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
+CONTROL_MOVE = "Hold W and S to move the orange squares" 
+
 
 class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''
@@ -31,6 +35,7 @@ class Shape(arcade.Sprite):
 
 
 class BreathingSquare(arcade.Window):
+    ''' class for breathing square illusion'''
  
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
@@ -70,9 +75,9 @@ class BreathingSquare(arcade.Window):
         
         self.sprite_list.draw()
 
-        arcade.draw_text("Breathing Square", 5, 775, (0,0,0), 18)
-        arcade.draw_text("Hold A and D to rotate the blue square", 5, 7, (0,0,0), 14)
-        arcade.draw_text("Hold W and S to move the orange squares", 5, 30, (0,0,0), 14)
+        arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
+        arcade.draw_text(CONTROL_ROTATE, 5, 30, (0,0,0), 14)
+        arcade.draw_text(CONTROL_MOVE, 5, 7, (0,0,0), 14)
 
 
     def on_update(self, delta_time):
@@ -114,7 +119,6 @@ class BreathingSquare(arcade.Window):
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.b_square.change_angle = 0
 
-        # put in for loop
         elif key == arcade.key.UP or key == arcade.key.W:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0
@@ -125,7 +129,6 @@ class BreathingSquare(arcade.Window):
             self.sprite_list[4].change_x = 0
             self.sprite_list[4].change_y = 0
 
-        # put in for loop
         elif key == arcade.key.DOWN or key == arcade.key.S:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0

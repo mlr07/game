@@ -29,3 +29,4 @@ each illusion will have:
 ## ???
 add text title and instructions
 implement start and stop screens    
+adjust orange square start position
