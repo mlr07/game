@@ -7,8 +7,8 @@ SCREEN_TITLE = "Breathing Square"
 BLUE_SQUARE_SCALE = 3.5
 ORANGE_SQUARE_SCALE = 2.5
 
-ANGLE_SPEED = 0.5
-POS_SPEED = 0.5
+ANGLE_SPEED = 0.75
+POS_SPEED = 0.75
 
 
 class Shape(arcade.Sprite):
@@ -70,6 +70,10 @@ class BreathingSquare(arcade.Window):
         
         self.sprite_list.draw()
 
+        arcade.draw_text("Breathing Square", 5, 775, (0,0,0), 18)
+        arcade.draw_text("Hold A and D to rotate the blue square", 5, 7, (0,0,0), 14)
+        arcade.draw_text("Hold W and S to move the orange squares", 5, 30, (0,0,0), 14)
+
 
     def on_update(self, delta_time):
         self.sprite_list.update()
@@ -110,6 +114,7 @@ class BreathingSquare(arcade.Window):
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.b_square.change_angle = 0
 
+        # put in for loop
         elif key == arcade.key.UP or key == arcade.key.W:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0
@@ -120,7 +125,7 @@ class BreathingSquare(arcade.Window):
             self.sprite_list[4].change_x = 0
             self.sprite_list[4].change_y = 0
 
-
+        # put in for loop
         elif key == arcade.key.DOWN or key == arcade.key.S:
             self.sprite_list[1].change_x = 0
             self.sprite_list[1].change_y = 0
