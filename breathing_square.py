@@ -43,7 +43,7 @@ class MenuView(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
-        arcade.draw_text(MENU, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, (0,0,0), 20, "center")
+        arcade.draw_text(MENU, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, (0,0,0), 20, anchor_x="center")
 
 
     def on_key_press(self, key, key_modifiers):
