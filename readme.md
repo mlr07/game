@@ -27,6 +27,6 @@ each illusion will have:
 2. option to exit and return to menu
 
 ## ???
-add text title and instructions
-implement start and stop screens    
-adjust orange square start position
+- implement pause screen with space
+- implement exit screen with esc
+- adjust orange square start position
