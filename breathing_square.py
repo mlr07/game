@@ -10,6 +10,7 @@ ORANGE_SQUARE_SCALE = 2.5
 ANGLE_SPEED = 0.75
 POS_SPEED = 0.75
 
+MENU = "Hit ENTER to start the Breathing Square!" 
 TITLE = "Breathing Square"
 CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
 CONTROL_MOVE = "Hold W and S to move the orange squares" 
@@ -34,11 +35,29 @@ class Shape(arcade.Sprite):
             self.top = SCREEN_HEIGHT-1
 
 
-class BreathingSquare(arcade.Window):
+class MenuView(arcade.View):
+    '''class that handles menu view'''
+    def on_show(self):
+        arcade.set_background_color(arcade.color.WHITE)
+
+
+    def on_draw(self):
+        arcade.start_render()
+        arcade.draw_text(MENU, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, (0,0,0), 20, "center")
+
+
+    def on_key_press(self, key, key_modifiers):
+        if key == arcade.key.ENTER:
+            game_view = BreathingSquare()
+            game_view.setup()
+            self.window.show_view(game_view)
+
+
+class BreathingSquare(arcade.View):
     ''' class for breathing square illusion'''
  
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+        super().__init__()
 
         self.sprite_list = None
 
@@ -52,22 +71,20 @@ class BreathingSquare(arcade.Window):
 
         img_src = "./resources/blue_square.png"
         self.b_square = arcade.Sprite(img_src, BLUE_SQUARE_SCALE)
-        self.b_square.center_x = self.width/2
-        self.b_square.center_y = self.height/2
+        self.b_square.center_x = SCREEN_WIDTH/2
+        self.b_square.center_y = SCREEN_HEIGHT/2
         self.sprite_list.append(self.b_square)
 
-        coords = [[self.width/4,self.height/4],
-                  [self.width*0.75,self.height*0.25],
-                  [self.width*0.25,self.height*0.75],
-                  [self.width*0.75,self.height*0.75]
+        coords = [[SCREEN_WIDTH/4,SCREEN_HEIGHT/4],
+                  [SCREEN_WIDTH*0.75,SCREEN_HEIGHT*0.25],
+                  [SCREEN_WIDTH*0.25,SCREEN_HEIGHT*0.75],
+                  [SCREEN_WIDTH*0.75,SCREEN_HEIGHT*0.75]
         ]
 
         for coord in coords:
             sqr = Shape("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
             sqr.position = coord
             self.sprite_list.append(sqr)
-
-        print(len(self.sprite_list))
 
 
     def on_draw(self):
@@ -141,8 +158,9 @@ class BreathingSquare(arcade.Window):
 
 
 def main():
-    game = BreathingSquare()
-    game.setup()
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    menu_view = MenuView()
+    window.show_view(menu_view)
     arcade.run()
 
 
