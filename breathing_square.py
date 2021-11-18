@@ -7,10 +7,10 @@ SCREEN_TITLE = "Breathing Square"
 BLUE_SQUARE_SCALE = 3.5
 ORANGE_SQUARE_SCALE = 2.5
 
-ANGLE_SPEED = 0.75
+ANGLE_SPEED = 1
 POS_SPEED = 0.75
 
-MENU = "Hit ENTER to start the Breathing Square!" 
+MENU = "Press 1 to start the Breathing Square!" 
 TITLE = "Breathing Square"
 CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
 CONTROL_MOVE = "Hold W and S to move the orange squares" 
@@ -47,7 +47,7 @@ class MenuView(arcade.View):
 
 
     def on_key_press(self, key, key_modifiers):
-        if key == arcade.key.ENTER:
+        if key == arcade.key.KEY_1:
             game_view = BreathingSquare()
             game_view.setup()
             self.window.show_view(game_view)
