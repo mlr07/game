@@ -2,7 +2,7 @@ import arcade
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 800
-SCREEN_TITLE = "Breathing Square"
+SCREEN_TITLE = "Illusions Game"
 
 BLUE_SQUARE_SCALE = 3.5
 ORANGE_SQUARE_SCALE = 2.5
@@ -10,7 +10,11 @@ ORANGE_SQUARE_SCALE = 2.5
 ANGLE_SPEED = 1
 POS_SPEED = 0.75
 
-MENU = "Press 1 to start the Breathing Square!" 
+MENU_1 = "Press 1 to start the Breathing Square!" 
+MENU_2 = "Press 2 to start Motion Binding!"
+MENU_3 = "Press 3 to start the Hidden Bird!"
+MENU_4 = "Press 4 to start Arrow Lengths!"
+
 TITLE = "Breathing Square"
 CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
 CONTROL_MOVE = "Hold W and S to move the orange squares" 
@@ -43,7 +47,10 @@ class MenuView(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
-        arcade.draw_text(MENU, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, (0,0,0), 20, anchor_x="center")
+        arcade.draw_text(MENU_1, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.65, (0,0,0), 20, anchor_x="center")
+        arcade.draw_text(MENU_2, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.55, (0,0,0), 20, anchor_x="center")
+        arcade.draw_text(MENU_3, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.45, (0,0,0), 20, anchor_x="center")
+        arcade.draw_text(MENU_4, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.35, (0,0,0), 20, anchor_x="center")
 
 
     def on_key_press(self, key, key_modifiers):
@@ -51,6 +58,29 @@ class MenuView(arcade.View):
             game_view = BreathingSquare()
             game_view.setup()
             self.window.show_view(game_view)
+        elif key == arcade.key.KEY_2:
+            game_view = PlaceHolder()
+            game_view.setup()
+            self.window.show_view(game_view)
+
+
+class PlaceHolder(arcade.View):
+    '''place holder for future game classes'''
+
+    def __init__(self):
+        super().__init__()
+
+        arcade.set_background_color(arcade.color.WHITE)
+
+
+    def setup(self):
+        pass
+
+    
+    def on_draw(self):
+        arcade.start_render()
+
+        arcade.draw_text("Place Holder", SCREEN_HEIGHT*0.5, SCREEN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
 
 
 class BreathingSquare(arcade.View):
