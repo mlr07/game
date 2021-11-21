@@ -27,6 +27,8 @@ each illusion will have:
 2. option to exit and return to menu
 
 ## ???
+- break menu away from breathing square
+    - import illusions into menu
+- implement arrow lengths with own module
 - implement pause screen with space
 - implement exit screen with esc
-- adjust orange square start position
