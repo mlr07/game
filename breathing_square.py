@@ -39,50 +39,7 @@ class Shape(arcade.Sprite):
             self.top = SCREEN_HEIGHT-1
 
 
-class MenuView(arcade.View):
-    '''class that handles menu view'''
-    def on_show(self):
-        arcade.set_background_color(arcade.color.WHITE)
-
-
-    def on_draw(self):
-        arcade.start_render()
-        arcade.draw_text(MENU_1, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.65, (0,0,0), 20, anchor_x="center")
-        arcade.draw_text(MENU_2, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.55, (0,0,0), 20, anchor_x="center")
-        arcade.draw_text(MENU_3, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.45, (0,0,0), 20, anchor_x="center")
-        arcade.draw_text(MENU_4, SCREEN_WIDTH*0.5, SCREEN_HEIGHT*0.35, (0,0,0), 20, anchor_x="center")
-
-
-    def on_key_press(self, key, key_modifiers):
-        if key == arcade.key.KEY_1:
-            game_view = BreathingSquare()
-            game_view.setup()
-            self.window.show_view(game_view)
-        elif key == arcade.key.KEY_2:
-            game_view = PlaceHolder()
-            game_view.setup()
-            self.window.show_view(game_view)
-
-
-class PlaceHolder(arcade.View):
-    '''place holder for future game classes'''
-
-    def __init__(self):
-        super().__init__()
-
-        arcade.set_background_color(arcade.color.WHITE)
-
-
-    def setup(self):
-        pass
-
-    
-    def on_draw(self):
-        arcade.start_render()
-
-        arcade.draw_text("Place Holder", SCREEN_HEIGHT*0.5, SCREEN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
-
-
+# change to recieve screen args from start
 class BreathingSquare(arcade.View):
     ''' class for breathing square illusion'''
  
@@ -189,8 +146,9 @@ class BreathingSquare(arcade.View):
 
 def main():
     window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
-    menu_view = MenuView()
-    window.show_view(menu_view)
+    game_view = BreathingSquare()
+    game_view.setup()
+    window.show_view(game_view)
     arcade.run()
 
 
