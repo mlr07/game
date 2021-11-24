@@ -1,6 +1,6 @@
 import arcade
 from breathing_square import BreathingSquare
-from arrow_lengths import ArrowLength
+from arrow_lengths import ArrowLengths
 
 SCRN_WIDTH = 800
 SCRN_HEIGHT = 800
@@ -36,8 +36,12 @@ class StartView(arcade.View):
             game_view = PlaceHolder()
             game_view.setup()
             self.window.show_view(game_view)
-        elif key == arcade.key.KEY_4:
+        elif key == arcade.key.KEY_3:
             game_view = PlaceHolder()
+            game_view.setup()
+            self.window.show_view(game_view)
+        elif key == arcade.key.KEY_4:
+            game_view = ArrowLengths()
             game_view.setup()
             self.window.show_view(game_view)
 
