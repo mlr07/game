@@ -3,6 +3,7 @@ import arcade
 TITLE = "Arrow Lengths"
 CONTROL_IN = "Hold W to move arrows together"
 CONTROL_OUT = "HOlD S to move arrows apart"
+CONTROL_SPEED = 1
 
 #TODO: inherit screen dims from start menu
 
@@ -45,6 +46,7 @@ class ArrowLengths(arcade.View):
         arcade.start_render()
         self.outer_arrow.draw()
         self.inner_arrow.draw()
+        arcade.finish_render()
 
 
     def on_update(self, delta_time):
@@ -53,11 +55,19 @@ class ArrowLengths(arcade.View):
 
     
     def on_key_press(self, key, key_modifiers):
-        pass
+        if key == arcade.key.W:
+            self.outer_arrow.change_y = CONTROL_SPEED
+            self.inner_arrow.change_y = -CONTROL_SPEED
+        
+        elif key == arcade.key.S:
+            self.outer_arrow.change_y = -CONTROL_SPEED
+            self.inner_arrow.change_y = CONTROL_SPEED
 
 
     def on_key_release(self, key, key_modifiers):
-        pass
+        if key == arcade.key.W or key == arcade.key.S:
+            self.outer_arrow.change_y = 0
+            self.outer_arrow.change_y = 0
 
 
 def main():

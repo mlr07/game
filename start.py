@@ -62,7 +62,7 @@ class PlaceHolder(arcade.View):
     def on_draw(self):
         arcade.start_render()
 
-        arcade.draw_text("Place Holder", SCRN_HEIGHT*0.5, SCRN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
+        arcade.draw_text("Not implemented yet", SCRN_HEIGHT*0.5, SCRN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
 
 
 def main():

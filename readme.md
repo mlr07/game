@@ -32,3 +32,4 @@ each illusion will have:
 - implement arrow lengths with own module
 - implement pause screen with space
 - implement exit screen with esc
+- move shapes to its own module
