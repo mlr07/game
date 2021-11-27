@@ -33,7 +33,7 @@ class ArrowLengths(arcade.View):
 
     
     def setup(self):
-        self.outer_arrow = Arrow("./resources/outer_arrow.png")
+        self.outer_arrow = Arrow("/home/mlr/git/game/resources/outer_arrow.png")
         self.outer_arrow.center_x = 800*0.5
         self.outer_arrow.center_y = 800*0.7
 
