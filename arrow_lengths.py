@@ -33,7 +33,7 @@ class ArrowLengths(arcade.View):
 
     
     def setup(self):
-        self.outer_arrow = Arrow("/home/mlr/git/game/resources/outer_arrow.png")
+        self.outer_arrow = Arrow("./resources/outer_arrow.png")
         self.outer_arrow.center_x = 800*0.5
         self.outer_arrow.center_y = 800*0.7
 
@@ -46,7 +46,6 @@ class ArrowLengths(arcade.View):
         arcade.start_render()
         self.outer_arrow.draw()
         self.inner_arrow.draw()
-        arcade.finish_render()
 
 
     def on_update(self, delta_time):
@@ -68,6 +67,9 @@ class ArrowLengths(arcade.View):
         if key == arcade.key.W or key == arcade.key.S:
             self.outer_arrow.change_y = 0
             self.outer_arrow.change_y = 0
+        if key == arcade.key.W or key == arcade.key.S:
+            self.inner_arrow.change_y = 0
+            self.inner_arrow.change_y = 0
 
 
 def main():
