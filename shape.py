@@ -1,5 +1,8 @@
 import arcade
 
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 800
+
 
 class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''

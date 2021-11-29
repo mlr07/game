@@ -1,25 +1,12 @@
 import arcade
+from shape import Shape
 
 TITLE = "Arrow Lengths"
 CONTROL_IN = "Hold W to move arrows together"
-CONTROL_OUT = "HOlD S to move arrows apart"
+CONTROL_OUT = "Hold S to move arrows apart"
 CONTROL_SPEED = 1.5
 
 #TODO: inherit screen dims from start menu
-
-
-#NOTE: this class could probably just use the base shape
-class Arrow(arcade.Sprite):
-    '''extended class for arrow sprites'''
-
-    def update(self):
-        '''move arrow sprite and check for out of bounds'''
-        self.center_y += self.change_y
-
-        if self.bottom < 0:
-            self.bottom = 0
-        elif self.top > 800-1:
-            self.top = 800-1
 
 
 class ArrowLengths(arcade.View):
@@ -33,11 +20,11 @@ class ArrowLengths(arcade.View):
 
     
     def setup(self):
-        self.outer_arrow = Arrow("./resources/outer_arrow.png")
+        self.outer_arrow = Shape("./resources/outer_arrow.png")
         self.outer_arrow.center_x = 800*0.5
         self.outer_arrow.center_y = 800*0.7
 
-        self.inner_arrow = Arrow("./resources/inner_arrow.png")
+        self.inner_arrow = Shape("./resources/inner_arrow.png")
         self.inner_arrow.center_x = 800*0.5
         self.inner_arrow.center_y = 800*0.3
 
