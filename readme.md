@@ -2,10 +2,10 @@
 
 small game that attempts to reproduce a set of classic visual illusions:
 
-[x] 1. motion binding
-[ ] 2. breathing square
-[ ] 3. hidden bird
-[x] 4. arrow lengths
+1. [x] motion binding
+2. [ ] breathing square
+3. [ ] hidden bird
+4. [x] arrow lengths
 
 illusions 1-3 by [michael bach, university of freiberg, germany](https://michaelbach.de/ot/).
 
