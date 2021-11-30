@@ -6,27 +6,27 @@ CONTROL_IN = "Hold W to move arrows together"
 CONTROL_OUT = "Hold S to move arrows apart"
 CONTROL_SPEED = 1.5
 
-#TODO: inherit screen dims from start menu
-
 
 class ArrowLengths(arcade.View):
     '''class for arrow length illusions'''
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, width, height):
+        super().__init__(self)
         self.outer_arrow = None
         self.inner_arrow = None
+        self.width = width
+        self.height = height
         arcade.set_background_color(arcade.color.WHITE)
 
     
     def setup(self):
         self.outer_arrow = Shape("./resources/outer_arrow.png")
-        self.outer_arrow.center_x = 800*0.5
-        self.outer_arrow.center_y = 800*0.7
+        self.outer_arrow.center_x = self.width*0.5
+        self.outer_arrow.center_y = self.height*0.7
 
         self.inner_arrow = Shape("./resources/inner_arrow.png")
-        self.inner_arrow.center_x = 800*0.5
-        self.inner_arrow.center_y = 800*0.3
+        self.inner_arrow.center_x = self.width*0.5
+        self.inner_arrow.center_y = self.height*0.3
 
 
     def on_draw(self):

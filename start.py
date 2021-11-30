@@ -29,21 +29,16 @@ class StartView(arcade.View):
     # pass screen args to illusion classes
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.KEY_1:
-            game_view = BreathingSquare()
-            game_view.setup()
-            self.window.show_view(game_view)
+            game_view = BreathingSquare(SCRN_WIDTH, SCRN_HEIGHT)
         elif key == arcade.key.KEY_2:
             game_view = PlaceHolder()
-            game_view.setup()
-            self.window.show_view(game_view)
         elif key == arcade.key.KEY_3:
             game_view = PlaceHolder()
-            game_view.setup()
-            self.window.show_view(game_view)
         elif key == arcade.key.KEY_4:
-            game_view = ArrowLengths()
-            game_view.setup()
-            self.window.show_view(game_view)
+            game_view = ArrowLengths(SCRN_WIDTH, SCRN_HEIGHT)
+
+        game_view.setup()
+        self.window.show_view(game_view)
 
 
 class PlaceHolder(arcade.View):
