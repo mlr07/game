@@ -41,6 +41,19 @@ class StartView(arcade.View):
         self.window.show_view(game_view)
 
 
+    def on_key_release(self, key, key_modifiers):
+        if key == arcade.key.KEY_1:
+            game_view = None
+        elif key == arcade.key.KEY_2:
+            game_view = None
+        elif key == arcade.key.KEY_3:
+            game_view = None
+        elif key == arcade.key.KEY_4:
+            game_view = None
+
+        
+
+
 class PlaceHolder(arcade.View):
     '''place holder for future game classes'''
 
