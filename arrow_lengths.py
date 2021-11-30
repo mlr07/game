@@ -11,7 +11,7 @@ class ArrowLengths(arcade.View):
     '''class for arrow length illusions'''
 
     def __init__(self, width, height):
-        super().__init__(self)
+        super().__init__()
         self.outer_arrow = None
         self.inner_arrow = None
         self.width = width
