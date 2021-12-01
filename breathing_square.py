@@ -41,7 +41,7 @@ class BreathingSquare(arcade.View):
         ]
 
         for coord in coords:
-            sqr = Shape("./resources/orange_square.png", ORANGE_SQUARE_SCALE)
+            sqr = Shape("./resources/orange_square.png", ORANGE_SQUARE_SCALE, self.width, self.height)
             sqr.position = coord
             self.sprite_list.append(sqr)
 

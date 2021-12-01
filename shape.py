@@ -1,11 +1,14 @@
 import arcade
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 800
-
 
 class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''
+    
+    def __init__(self, width, height):
+        super.__init__()
+        self.width = width
+        self.height = height
+
 
     def update(self):
         '''move the sprite and check for out of bounds'''
