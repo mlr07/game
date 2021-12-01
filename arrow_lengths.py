@@ -20,11 +20,11 @@ class ArrowLengths(arcade.View):
 
     
     def setup(self):
-        self.outer_arrow = Shape("./resources/outer_arrow.png")
+        self.outer_arrow = Shape(self.width, self.height, "./resources/outer_arrow.png")
         self.outer_arrow.center_x = self.width*0.5
         self.outer_arrow.center_y = self.height*0.7
 
-        self.inner_arrow = Shape("./resources/inner_arrow.png")
+        self.inner_arrow = Shape(self.width, self.height, "./resources/inner_arrow.png")
         self.inner_arrow.center_x = self.width*0.5
         self.inner_arrow.center_y = self.height*0.3
 

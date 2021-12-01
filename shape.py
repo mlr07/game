@@ -5,7 +5,7 @@ class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''
     
     def __init__(self, width, height):
-        super.__init__()
+        #super.__init__()
         self.width = width
         self.height = height
 
