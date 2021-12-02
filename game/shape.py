@@ -4,7 +4,7 @@ import arcade
 class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''
    
-    def __init__(self, img_src, scale=1):
+    def __init__(self, img_src, scale=None):
         super().__init__(img_src, scale)
         self.width = 1
         self.height = 1
