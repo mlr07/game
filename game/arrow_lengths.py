@@ -28,7 +28,7 @@ class ArrowLengths(arcade.View):
 
         self.inner_arrow = Shape("./resources/inner_arrow.png")
         self.inner_arrow.width = self.width
-        self.inner_arow.height = self.height
+        self.inner_arrow.height = self.height
         self.inner_arrow.center_x = self.width*0.5
         self.inner_arrow.center_y = self.height*0.3
 

@@ -3,7 +3,11 @@ import arcade
 
 class Shape(arcade.Sprite):
     '''extended class for shapes in illusion'''
-    
+   
+    def __init__(self, img_src, scale=1):
+        super().__init__(img_src, scale)
+        self.width = 1
+        self.height = 1
 
     def update(self):
         '''move the sprite and check for out of bounds'''
@@ -19,4 +23,5 @@ class Shape(arcade.Sprite):
             self.bottom = 0
         elif self.top > self.height-1:
             self.top = self.height-1
+
 
