@@ -21,14 +21,10 @@ class ArrowLengths(arcade.View):
     
     def setup(self):
         self.outer_arrow = Shape("./resources/outer_arrow.png")
-        self.outer_arrow.width = self.width
-        self.outer_arrow.width = self.height
-        self.outer_arrow.center_x = self.width*0.5
+        self.outer_arrow.center_x = self.width*0.5 
         self.outer_arrow.center_y = self.height*0.7
 
         self.inner_arrow = Shape("./resources/inner_arrow.png")
-        self.inner_arrow.width = self.width
-        self.inner_arrow.height = self.height
         self.inner_arrow.center_x = self.width*0.5
         self.inner_arrow.center_y = self.height*0.3
 
@@ -44,8 +40,8 @@ class ArrowLengths(arcade.View):
 
 
     def on_update(self, delta_time):
-        self.outer_arrow.update()
-        self.inner_arrow.update()
+        self.outer_arrow.update(self.width, self.height)
+        self.inner_arrow.update(self.width, self.height)
 
     
     def on_key_press(self, key, key_modifiers):
