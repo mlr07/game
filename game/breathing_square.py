@@ -95,10 +95,10 @@ class BreathingSquare(arcade.View):
 
     def on_key_release(self, key, key_modifiers):
         if key == arcade.key.LEFT or key == arcade.key.A:
-            self.b_square.change_angle = 0
+            self.sprite_list[0].change_angle = 0
 
         elif key == arcade.key.RIGHT or key == arcade.key.D:
-            self.b_square.change_angle = 0
+            self.sprite_list[0].change_angle = 0
 
         elif key == arcade.key.UP or key == arcade.key.W:
             self.sprite_list[1].change_x = 0
