@@ -58,7 +58,7 @@ class BreathingSquare(arcade.View):
 
 
     def on_update(self, delta_time):
-        self.sprite_list.update()
+        self.sprite_list.update(self.width, self.height)
 
 
     def on_key_press(self, key, key_modifiers):
