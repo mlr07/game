@@ -30,10 +30,13 @@ class StartView(arcade.View):
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.KEY_1:
             game_view = BreathingSquare(SCRN_WIDTH, SCRN_HEIGHT)
+
         elif key == arcade.key.KEY_2:
             game_view = PlaceHolder()
+
         elif key == arcade.key.KEY_3:
             game_view = PlaceHolder()
+
         elif key == arcade.key.KEY_4:
             game_view = ArrowLengths(SCRN_WIDTH, SCRN_HEIGHT)
 
@@ -41,35 +44,15 @@ class StartView(arcade.View):
         self.window.show_view(game_view)
 
 
-    def on_key_release(self, key, key_modifiers):
-        if key == arcade.key.KEY_1:
-            game_view = None
-        elif key == arcade.key.KEY_2:
-            game_view = None
-        elif key == arcade.key.KEY_3:
-            game_view = None
-        elif key == arcade.key.KEY_4:
-            game_view = None
-
-        
-
-
 class PlaceHolder(arcade.View):
     '''place holder for future game classes'''
 
     def __init__(self):
         super().__init__()
-
         arcade.set_background_color(arcade.color.WHITE)
-
-
-    def setup(self):
-        pass
-
     
     def on_draw(self):
         arcade.start_render()
-
         arcade.draw_text("Not implemented yet", SCRN_HEIGHT*0.5, SCRN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
 
 
