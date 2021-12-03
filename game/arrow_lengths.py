@@ -58,6 +58,7 @@ class ArrowLengths(arcade.View):
         if key == arcade.key.W or key == arcade.key.S:
             self.outer_arrow.change_y = 0
             self.outer_arrow.change_y = 0
+
         if key == arcade.key.W or key == arcade.key.S:
             self.inner_arrow.change_y = 0
             self.inner_arrow.change_y = 0

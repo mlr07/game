@@ -27,8 +27,8 @@ class BreathingSquare(arcade.View):
     def setup(self):
         self.sprite_list = arcade.SpriteList()
 
-        img_src = "./resources/blue_square.png"
-        self.b_square = arcade.Sprite(img_src, BLUE_SQUARE_SCALE)
+        img_blue = "./resources/blue_square.png"
+        self.b_square = arcade.Sprite(img_blue , BLUE_SQUARE_SCALE)
         self.b_square.center_x = self.width*0.5
         self.b_square.center_y = self.height*0.5
         self.sprite_list.append(self.b_square)
@@ -40,9 +40,9 @@ class BreathingSquare(arcade.View):
             [self.width*0.75,self.height*0.75]
         ]
 
-        img_src_orng = "./resources/orange_square.png"
+        img_orng = "./resources/orange_square.png"
         for coord in coords:
-            sqr = Shape(img_src_orng, ORANGE_SQUARE_SCALE)
+            sqr = Shape(img_orng, ORANGE_SQUARE_SCALE)
             sqr.position = coord
             self.sprite_list.append(sqr)
 
@@ -67,10 +67,10 @@ class BreathingSquare(arcade.View):
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.LEFT or key == arcade.key.A:
-            self.b_square.change_angle = ANGLE_SPEED
+            self.sprite_list[0].change_angle = ANGLE_SPEED
 
         elif key == arcade.key.RIGHT or key == arcade.key.D:
-            self.b_square.change_angle = -ANGLE_SPEED
+            self.sprite_list[0].change_angle = -ANGLE_SPEED
 
         elif key == arcade.key.UP or key == arcade.key.W:
             self.sprite_list[1].change_x = POS_SPEED
