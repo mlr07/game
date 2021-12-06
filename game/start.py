@@ -1,6 +1,7 @@
 import arcade
 from breathing_square import BreathingSquare
 from arrow_lengths import ArrowLengths
+from pause import Pause
 
 SCRN_WIDTH = 800
 SCRN_HEIGHT = 800

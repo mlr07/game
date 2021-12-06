@@ -1,5 +1,6 @@
 import arcade
 from shape import Shape
+from pause import Pause
 
 BLUE_SQUARE_SCALE = 3.5
 ORANGE_SQUARE_SCALE = 2.5
@@ -91,6 +92,10 @@ class BreathingSquare(arcade.View):
             self.sprite_list[3].change_y = POS_SPEED
             self.sprite_list[4].change_x = POS_SPEED
             self.sprite_list[4].change_y = POS_SPEED
+
+        elif key == arcade.key.ESCAPE:
+            pause = Pause(self)
+            self.window.show_view(pause)
 
 
     def on_key_release(self, key, key_modifiers):
