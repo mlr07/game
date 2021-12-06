@@ -14,6 +14,6 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 ## TODO
 [x] - inherit screen dims from start.py
 [ ] - implement pause and exit screen with esc
-[ ] - implement breathing square
+[ ] - replace white with gray background
 [ ] - implement breathing square
 [ ] - record gifs and add to readme
