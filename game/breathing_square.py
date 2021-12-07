@@ -50,9 +50,8 @@ class BreathingSquare(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
-        
+        arcade.set_background_color(arcade.color.WHITE)
         self.sprite_list.draw()
-
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_ROTATE, 5, 30, (0,0,0), 14)
         arcade.draw_text(CONTROL_MOVE, 5, 7, (0,0,0), 14)
@@ -94,7 +93,7 @@ class BreathingSquare(arcade.View):
             self.sprite_list[4].change_y = POS_SPEED
 
         elif key == arcade.key.ESCAPE:
-            pause = Pause(self)
+            pause = Pause(self, self.width, self.height)
             self.window.show_view(pause)
 
 
