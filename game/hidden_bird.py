@@ -21,8 +21,8 @@ class HiddenBird(arcade.View):
     
     def setup(self):
         self.camo = arcade.Sprite("./resources/camo.png")
-        #self.camo.center_x = self.width*0.5 
-        #self.camo.center_y = self.height*0.7
+        self.camo.center_x = self.width*0.5 
+        self.camo.center_y = self.height*0.5
 
         #self.bird = Shape("./resources/bird.png")
         #self.bird.center_x = self.width*0.5
@@ -41,20 +41,18 @@ class HiddenBird(arcade.View):
 
 
     def on_update(self, delta_time):
-        # move bird to random coordinate
-        # toggle camo display
         self.camo.update()
-        pass
+        #self.bird.update(self.width, self.height)
     
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.E:
             # move bird to a random x/y coord
             pass
 
+
         elif key == arcade.key.Q:
             if self.camo.alpha == 0:
                 self.camo.alpha = 255
-            
             else:
                 self.camo.alpha = 0
 
@@ -69,6 +67,9 @@ class HiddenBird(arcade.View):
             # determine if needed
             pass
 
+
+    def move_bird(self):
+        pass
 
 def main():
     pass
