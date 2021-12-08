@@ -1,6 +1,7 @@
 import arcade
 from breathing_square import BreathingSquare
 from arrow_lengths import ArrowLengths
+from hidden_bird import HiddenBird
 from pause import Pause
 
 SCRN_WIDTH = 800
@@ -36,7 +37,7 @@ class StartView(arcade.View):
             game_view = PlaceHolder()
 
         elif key == arcade.key.KEY_3:
-            game_view = PlaceHolder()
+            game_view = HiddenBird(SCRN_WIDTH, SCRN_HEIGHT)
 
         elif key == arcade.key.KEY_4:
             game_view = ArrowLengths(SCRN_WIDTH, SCRN_HEIGHT)
