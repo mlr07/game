@@ -12,8 +12,7 @@ illusions 1-3 by [michael bach, university of freiberg, germany](https://michael
 illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
 
 ## TODO
-[x] - inherit screen dims from start.py
-[ ] - implement pause and exit screen with esc
-[ ] - replace white with gray background
-[ ] - implement breathing square
-[ ] - record gifs and add to readme
+- [x] inherit screen dims from start.py
+- [x] implement pause and exit screen with esc
+- [ ] implement reset game
+- [ ] record gifs and add to readme
