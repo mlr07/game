@@ -47,7 +47,7 @@ class HiddenBird(arcade.View):
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.E:
             # move bird to a random x/y coord
-            pass
+            pass:
 
 
         elif key == arcade.key.Q:
@@ -69,6 +69,9 @@ class HiddenBird(arcade.View):
 
 
     def move_bird(self):
+        # select random x coord between 0+wdith and 800-width
+        # select random y coord between 0+height and 800-height
+        # update center x and center y
         pass
 
 
