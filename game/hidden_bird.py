@@ -24,16 +24,16 @@ class HiddenBird(arcade.View):
         self.camo.center_x = self.width*0.5 
         self.camo.center_y = self.height*0.5
 
-        #self.bird = Shape("./resources/bird.png")
-        #self.bird.center_x = self.width*0.5
-        #self.bird.center_y = self.height*0.3
+        self.bird = Shape("./resources/bird.png")
+        self.bird.center_x = self.width*0.5
+        self.bird.center_y = self.height*0.3
 
 
     def on_draw(self):
         arcade.start_render()
         arcade.set_background_color(arcade.color.WHITE)
         self.camo.draw()
-        #self.bird.draw()
+        self.bird.draw()
 
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_CAMO, 5, 30, (0,0,0), 14)
@@ -42,7 +42,7 @@ class HiddenBird(arcade.View):
 
     def on_update(self, delta_time):
         self.camo.update()
-        #self.bird.update(self.width, self.height)
+        self.bird.update(self.width, self.height)
     
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.E:
@@ -70,6 +70,7 @@ class HiddenBird(arcade.View):
 
     def move_bird(self):
         pass
+
 
 def main():
     pass
