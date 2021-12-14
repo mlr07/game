@@ -1,6 +1,7 @@
 import arcade
 from shape import Shape
 from pause import Pause
+from random import randint
 
 TITLE = "Moving Bird"
 CONTROL_CAMO = "Hit Q to toggle camo"
@@ -46,8 +47,7 @@ class HiddenBird(arcade.View):
     
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.E:
-            # move bird to a random x/y coord
-            pass:
+            self.move_bird()
 
 
         elif key == arcade.key.Q:
@@ -69,11 +69,9 @@ class HiddenBird(arcade.View):
 
 
     def move_bird(self):
-        # select random x coord between 0+wdith and 800-width
-        # select random y coord between 0+height and 800-height
-        # update center x and center y
-        pass
-
+        self.bird.center_x = randint(0, self.width)
+        self.bird.center_y = randint(0, self.height)
+        
 
 def main():
     pass
