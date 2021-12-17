@@ -1,6 +1,7 @@
 import arcade
-from shape import Shape
-from pause import Pause
+
+import shape
+import pause
 
 BLUE_SQUARE_SCALE = 3.5
 ORANGE_SQUARE_SCALE = 2.5
@@ -43,7 +44,7 @@ class BreathingSquare(arcade.View):
 
         img_orng = "./resources/orange_square.png"
         for coord in coords:
-            sqr = Shape(img_orng, ORANGE_SQUARE_SCALE)
+            sqr = shape.Shape(img_orng, ORANGE_SQUARE_SCALE)
             sqr.position = coord
             self.sprite_list.append(sqr)
 
@@ -93,7 +94,7 @@ class BreathingSquare(arcade.View):
             self.sprite_list[4].change_y = POS_SPEED
 
         elif key == arcade.key.ESCAPE:
-            pause = Pause(self, self.width, self.height)
+            pause = pause.Pause(self, self.width, self.height)
             self.window.show_view(pause)
 
 

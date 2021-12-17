@@ -1,6 +1,8 @@
 import arcade
-from shape import Shape
-from pause import Pause
+
+import shape
+import pause
+
 from random import randint
 
 TITLE = "Moving Bird"
@@ -25,7 +27,7 @@ class HiddenBird(arcade.View):
         self.camo.center_x = self.width*0.5 
         self.camo.center_y = self.height*0.5
 
-        self.bird = Shape("./resources/bird.png")
+        self.bird = shape.Shape("./resources/bird.png")
         self.bird.center_x = self.width*0.5
         self.bird.center_y = self.height*0.3
 
@@ -58,7 +60,7 @@ class HiddenBird(arcade.View):
 
 
         elif key == arcade.key.ESCAPE:
-            pause = Pause(self, self.width, self.height)
+            pause = pause.Pause(self, self.width, self.height)
             self.window.show_view(pause)
 
 

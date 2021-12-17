@@ -1,6 +1,7 @@
 import arcade
-from shape import Shape
-from pause import Pause
+
+import shape
+import pause
 
 TITLE = "Arrow Lengths"
 CONTROL_IN = "Hold W to move arrows together"
@@ -21,11 +22,11 @@ class ArrowLengths(arcade.View):
 
     
     def setup(self):
-        self.outer_arrow = Shape("./resources/outer_arrow.png")
+        self.outer_arrow = shape.Shape("./resources/outer_arrow.png")
         self.outer_arrow.center_x = self.width*0.5 
         self.outer_arrow.center_y = self.height*0.7
 
-        self.inner_arrow = Shape("./resources/inner_arrow.png")
+        self.inner_arrow = shape.Shape("./resources/inner_arrow.png")
         self.inner_arrow.center_x = self.width*0.5
         self.inner_arrow.center_y = self.height*0.3
 
@@ -56,7 +57,7 @@ class ArrowLengths(arcade.View):
             self.inner_arrow.change_y = CONTROL_SPEED
 
         elif key == arcade.key.ESCAPE:
-            pause = Pause(self, self.width, self.height)
+            pause = pause.Pause(self, self.width, self.height)
             self.window.show_view(pause)
 
 
