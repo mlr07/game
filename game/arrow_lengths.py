@@ -7,6 +7,7 @@ TITLE = "Arrow Lengths"
 CONTROL_IN = "Hold W to move arrows together"
 CONTROL_OUT = "Hold S to move arrows apart"
 CONTROL_SPEED = 1.5
+CONTROL_PAUSE = "Hit ESC to pause"
 
 
 class ArrowLengths(arcade.View):
@@ -40,6 +41,7 @@ class ArrowLengths(arcade.View):
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_IN, 5, 30, (0,0,0), 14)
         arcade.draw_text(CONTROL_OUT, 5, 7, (0,0,0), 14)
+        arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
 
     def on_update(self, delta_time):

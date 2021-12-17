@@ -12,6 +12,7 @@ POS_SPEED = 0.75
 TITLE = "Breathing Square"
 CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
 CONTROL_MOVE = "Hold W and S to move the orange squares" 
+CONTROL_PAUSE = "Hit ESC to pause"
 
 
 class BreathingSquare(arcade.View):
@@ -56,6 +57,7 @@ class BreathingSquare(arcade.View):
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_ROTATE, 5, 30, (0,0,0), 14)
         arcade.draw_text(CONTROL_MOVE, 5, 7, (0,0,0), 14)
+        arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
 
     def on_update(self, delta_time):

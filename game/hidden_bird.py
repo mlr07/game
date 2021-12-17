@@ -6,8 +6,9 @@ import pause
 from random import randint
 
 TITLE = "Moving Bird"
-CONTROL_CAMO = "Hit Q to toggle camo"
-CONTROL_BIRD = "Hit E to move bird"
+CONTROL_CAMO = "Hit C to toggle camo"
+CONTROL_BIRD = "Hit B to move bird"
+CONTROL_PAUSE = "Hit ESC to pause"
 
 
 class HiddenBird(arcade.View):
@@ -41,6 +42,7 @@ class HiddenBird(arcade.View):
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_CAMO, 5, 30, (0,0,0), 14)
         arcade.draw_text(CONTROL_BIRD, 5, 7, (0,0,0), 14)
+        arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
 
     def on_update(self, delta_time):
@@ -48,16 +50,14 @@ class HiddenBird(arcade.View):
         self.bird.update(self.width, self.height)
     
     def on_key_press(self, key, key_modifiers):
-        if key == arcade.key.E:
+        if key == arcade.key.B:
             self.move_bird()
 
-
-        elif key == arcade.key.Q:
+        elif key == arcade.key.C:
             if self.camo.alpha == 0:
                 self.camo.alpha = 255
             else:
                 self.camo.alpha = 0
-
 
         elif key == arcade.key.ESCAPE:
             pause_scr = pause.Pause(self, self.width, self.height)
