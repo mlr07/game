@@ -13,7 +13,8 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 
 ## TODO
 - [x] inherit screen dims from start.py
-- [x] implement pause and exit screen with esc
+- [x] implement pause and reset with esc
 - [x] implement hidden bird
-- [ ] implement reset game
+- [ ] implement exit game
+- [ ] check variable assignment in classes
 - [ ] record gifs and add to readme
