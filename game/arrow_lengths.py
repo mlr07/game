@@ -57,8 +57,8 @@ class ArrowLengths(arcade.View):
             self.inner_arrow.change_y = CONTROL_SPEED
 
         elif key == arcade.key.ESCAPE:
-            pause = pause.Pause(self, self.width, self.height)
-            self.window.show_view(pause)
+            pause_scr = pause.Pause(self, self.width, self.height)
+            self.window.show_view(pause_scr)
 
 
     def on_key_release(self, key, key_modifiers):
