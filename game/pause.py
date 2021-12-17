@@ -1,5 +1,5 @@
 import arcade
-
+import start
 
 class Pause(arcade.View):
     def __init__(self, game_view, width, height):
@@ -24,3 +24,7 @@ class Pause(arcade.View):
         elif key == arcade.key.ENTER:
             game = GameView()
             self.window.show_view(game)
+
+        elif key == arcade.key.R:
+            self.start = start.StartView()
+            self.window.show_view(self.start)
