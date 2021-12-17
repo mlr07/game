@@ -1,8 +1,8 @@
 import arcade
-from breathing_square import BreathingSquare
-from arrow_lengths import ArrowLengths
-from hidden_bird import HiddenBird
-from pause import Pause
+import breathing_square
+import arrow_lengths
+import hidden_bird
+import pause
 
 SCRN_WIDTH = 800
 SCRN_HEIGHT = 800
@@ -31,16 +31,16 @@ class StartView(arcade.View):
     # pass screen args to illusion classes
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.KEY_1:
-            game_view = BreathingSquare(SCRN_WIDTH, SCRN_HEIGHT)
+            game_view = breathing_square.BreathingSquare(SCRN_WIDTH, SCRN_HEIGHT)
 
         elif key == arcade.key.KEY_2:
             game_view = PlaceHolder()
 
         elif key == arcade.key.KEY_3:
-            game_view = HiddenBird(SCRN_WIDTH, SCRN_HEIGHT)
+            game_view = hidden_bird.HiddenBird(SCRN_WIDTH, SCRN_HEIGHT)
 
         elif key == arcade.key.KEY_4:
-            game_view = ArrowLengths(SCRN_WIDTH, SCRN_HEIGHT)
+            game_view = arrow_lengths.ArrowLengths(SCRN_WIDTH, SCRN_HEIGHT)
 
         game_view.setup()
         self.window.show_view(game_view)
