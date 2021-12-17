@@ -15,6 +15,7 @@ class Pause(arcade.View):
         arcade.draw_text("PAUSED", self.width*0.5, self.height*0.5+50, (0,0,0), 18, anchor_x="center")
         arcade.draw_text("Hit ESC to return", self.width*0.5, self.height*0.5, (0,0,0), 16, anchor_x="center")
         arcade.draw_text("Hit ENTER to quit", self.width*0.5, self.height*0.5-50, (0,0,0), 16, anchor_x="center")
+        arcade.draw_text("Hit R to start over", self.width*0.5, self.height*0.5-100, (0,0,0), 16, anchor_x="center")
 
 
     def on_key_press(self, key, _modifiers):
