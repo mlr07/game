@@ -18,10 +18,10 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 ![]()
 
 ## hidden bird
-![]()
+![hidden bird](resources/hidden_bird.gif)
 
 ## arrow lengths
-![]()
+![arrow lengths](resources/arrow_lengths.gif)
 
 
 ## TODO
@@ -30,4 +30,4 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 - [x] implement hidden bird
 - [x] implement exit game
 - [ ] check variable assignment in classes
-- [ ] record gifs and add to readme
+- [x] record gifs and add to readme
