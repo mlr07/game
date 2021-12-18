@@ -12,7 +12,7 @@ illusions 1-3 by [michael bach, university of freiberg, germany](https://michael
 illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
 
 ## breathing square
-![breathing square](resources/breathing_square.mp4)
+![breathing square](resources/breathing_square.gif)
 
 ## motion binding
 ![]()
