@@ -10,13 +10,13 @@ ANGLE_SPEED = 1
 POS_SPEED = 0.75
 
 TITLE = "Breathing Square"
-CONTROL_ROTATE = "Hold A and D to rotate the blue square" 
-CONTROL_MOVE = "Hold W and S to move the orange squares" 
+CONTROL_ROTATE = "Hold A or D to rotate the blue square" 
+CONTROL_MOVE = "Hold W or S to move the orange squares" 
 CONTROL_PAUSE = "Hit ESC to pause"
 
 
 class BreathingSquare(arcade.View):
-    ''' class for breathing square illusion'''
+    '''class for breathing square illusion'''
  
     def __init__(self, width, height):
         super().__init__()
