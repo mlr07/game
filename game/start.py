@@ -1,5 +1,6 @@
 import arcade
 import breathing_square
+import motion_binding
 import arrow_lengths
 import hidden_bird
 import pause
@@ -34,7 +35,7 @@ class StartView(arcade.View):
             game_view = breathing_square.BreathingSquare(SCRN_WIDTH, SCRN_HEIGHT)
 
         elif key == arcade.key.KEY_2:
-            game_view = PlaceHolder()
+            game_view = motion_binding.MotionBinding(SCRN_WIDTH, SCRN_HEIGHT)
 
         elif key == arcade.key.KEY_3:
             game_view = hidden_bird.HiddenBird(SCRN_WIDTH, SCRN_HEIGHT)
@@ -44,18 +45,6 @@ class StartView(arcade.View):
 
         game_view.setup()
         self.window.show_view(game_view)
-
-
-class PlaceHolder(arcade.View):
-    '''place holder for future game classes'''
-
-    def __init__(self):
-        super().__init__()
-        arcade.set_background_color(arcade.color.WHITE)
-    
-    def on_draw(self):
-        arcade.start_render()
-        arcade.draw_text("Not implemented yet", SCRN_HEIGHT*0.5, SCRN_WIDTH*0.5, (0,0,0), 18, anchor_x="center")
 
 
 def main():
