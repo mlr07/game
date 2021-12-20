@@ -4,8 +4,7 @@ import shape
 import pause
 
 BLUE_SQUARE_SCALE = 1
-GRAY_SQUARE_SCALE = 1
-
+GRAY_SQUARE_SCALE = 1.6
 POS_SPEED = 0.75
 
 TITLE = "Motion Binding"
@@ -35,20 +34,13 @@ class MotionBinding(arcade.View):
         self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
         self.sprite_list.append(self.b_square)
-
-        # coords need updating
+        
+        # XY location of square corners, calculated in place
         coords = [
-            [self.width*0.25,self.height*0.5],
-            [self.width*0.5,self.height*0.25],
-            [self.width*0.5,self.height*0.75],
-            [self.width*0.75,self.height*0.5]
-        ]
-
-        coords = [
-            [400*2**(1/2), self.height*0.5],
-            [0,0],
-            [0,0],
-            [0,0],
+            [(self.width-400*2**(1/2))/2, self.height*0.5],
+            [self.width*0.5, (self.height-400*2**(1/2))/2],
+            [self.width*0.5, 400*2**(1/2)+(self.height-400*2**(1/2))/2],
+            [400*2**(1/2)+(self.width-400*2**(1/2))/2,self.height*0.5],
         ]
 
         img_gray = "./resources/gray_square.png"
