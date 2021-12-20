@@ -4,7 +4,7 @@ import shape
 import pause
 
 BLUE_SQUARE_SCALE = 1
-GRAY_SQUARE_SCALE = 1
+GRAY_SQUARE_SCALE = 1.5
 
 POS_SPEED = 0.75
 
@@ -33,6 +33,7 @@ class MotionBinding(arcade.View):
         self.b_square = arcade.Sprite(img_blue , BLUE_SQUARE_SCALE)
         self.b_square.center_x = self.width*0.5
         self.b_square.center_y = self.height*0.5
+        self.b_square.angle = 45
         # change angle
         self.sprite_list.append(self.b_square)
 
@@ -44,12 +45,13 @@ class MotionBinding(arcade.View):
             [self.width*0.75,self.height*0.75]
         ]
 
-        #img_orng = "./resources/gray_outline.png"
-        #for coord in coords:
-        #    sqr = shape.Shape(img_orng, ORANGE_SQUARE_SCALE)
-        #    sqr.position = coord
-        #    # change angle
-        #    self.sprite_list.append(sqr)
+        img_gray = "./resources/gray_square.png"
+        for coord in coords:
+            sqr = shape.Shape(img_gray, GRAY_SQUARE_SCALE)
+            sqr.position = coord
+            sqr.angle = 45
+            # change angle
+            self.sprite_list.append(sqr)
 
 
     def on_draw(self):
