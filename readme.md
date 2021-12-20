@@ -12,16 +12,16 @@ illusions 1-3 by [michael bach, university of freiberg, germany](https://michael
 illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion).
 
 ## breathing square
-![breathing square](resources/breathing_square.gif)
+![breathing square](resources/gifs/breathing_square.gif)
 
 ## motion binding
 ![]()
 
 ## hidden bird
-![hidden bird](resources/hidden_bird.gif)
+![hidden bird](resources/gifs/hidden_bird.gif)
 
 ## arrow lengths
-![arrow lengths](resources/arrow_lengths.gif)
+![arrow lengths](resources/gifs/arrow_lengths.gif)
 
 
 ## TODO
