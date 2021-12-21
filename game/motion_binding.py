@@ -1,5 +1,5 @@
 import arcade
-
+import math
 import shape
 
 BLUE_SQUARE_SCALE = 1
@@ -29,10 +29,10 @@ class MotionBinding(arcade.View):
 
         img_blue = "./resources/blue_outline.png"
         self.b_square = arcade.Sprite(img_blue , BLUE_SQUARE_SCALE)
-        self.b_square.center_x = self.width*0.5-10
+        self.b_square.center_x = self.width*0.5+10
         self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
-        self.sprite_list.append(self.b_square)
+        #self.sprite_list.append(self.b_square)
         
         # XY location of square corners, calculated in place
         coords = [
@@ -52,6 +52,7 @@ class MotionBinding(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
+        self.b_square.draw()
         self.sprite_list.draw()
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
         arcade.draw_text(CONTROL_MOVE, 5, 30, (0,0,0), 14)
@@ -60,6 +61,7 @@ class MotionBinding(arcade.View):
 
 
     def on_update(self, delta_time):
+        self.b_square.update()
         self.sprite_list.update()
 
 
@@ -69,7 +71,8 @@ class MotionBinding(arcade.View):
     # constant motion or A/D key control
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
-            pass
+            self.angle=0
+            self.translate(self.angle)
         elif key == arcade.key.D:
             pass
         elif key == arcade.key.W:
@@ -84,6 +87,10 @@ class MotionBinding(arcade.View):
             pass
         elif key == arcade.key.D:
             pass
+
+    def translate(self, angle):
+        self.b_square.center_x = 1*math.cos(angle)
+        self.b_square.center_y = 1*math.sin(angle)
 
 
 def main():
