@@ -4,10 +4,10 @@ import shape
 
 BLUE_SQUARE_SCALE = 1
 GRAY_SQUARE_SCALE = 1.6
-POS_SPEED = 0.75
+ANGLE_SPEED = 0.75
 
 TITLE = "Motion Binding"
-CONTROL_MOVE = "Hold A or D to move the blue lines"
+CONTROL_MOVE = "Hold A or D to rotate blue lines"
 CONTROL_ALPHA = "Hold W or S to change alpha"
 CONTROL_PAUSE = "Hit ESC to pause"
 
@@ -64,11 +64,18 @@ class MotionBinding(arcade.View):
 
 
     def on_key_press(self, key, key_modifiers):
-        pass
+        if key == arcade.key.A:
+            self.sprite_list[0].change_angle = ANGLE_SPEED
+        elif key == arcade.key.D:
+            self.sprite_list[0].change_angle = -ANGLE_SPEED
+
 
 
     def on_key_release(self, key, key_modifiers):
-        pass
+        if key == arcade.key.A:
+            self.sprite_list[0].change_angle = 0
+        elif key == arcade.key.D:
+            self.sprite_list[0].change_angle = 0
 
 
 def main():
