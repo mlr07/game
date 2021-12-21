@@ -69,6 +69,11 @@ class MotionBinding(arcade.View):
         elif key == arcade.key.D:
             self.sprite_list[0].change_angle = -ANGLE_SPEED
 
+        elif key == arcade.key.W:
+            pass
+        elif key == arcade.key.S:
+            pass
+
 
 
     def on_key_release(self, key, key_modifiers):
