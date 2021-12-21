@@ -1,7 +1,6 @@
 import arcade
 
 import shape
-import pause
 
 BLUE_SQUARE_SCALE = 1
 GRAY_SQUARE_SCALE = 1.6
@@ -45,7 +44,7 @@ class MotionBinding(arcade.View):
 
         img_gray = "./resources/gray_square.png"
         for coord in coords:
-            sqr = shape.Shape(img_gray, GRAY_SQUARE_SCALE)
+            sqr = arcade.Sprite(img_gray, GRAY_SQUARE_SCALE)
             sqr.position = coord
             sqr.angle = 45
             self.sprite_list.append(sqr)
@@ -61,7 +60,7 @@ class MotionBinding(arcade.View):
 
 
     def on_update(self, delta_time):
-        pass
+        self.sprite_list.update()
 
 
     def on_key_press(self, key, key_modifiers):
