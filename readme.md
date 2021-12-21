@@ -30,5 +30,6 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 - [x] implement hidden bird
 - [x] implement exit game
 - [ ] implement motion binding
+- [ ] continous outline translation
 - [ ] check variable assignment in classes
 - [x] record gifs and add to readme
