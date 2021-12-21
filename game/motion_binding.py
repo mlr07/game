@@ -21,6 +21,7 @@ class MotionBinding(arcade.View):
         self.b_square = None
         self.width = width
         self.height = height
+        self.translate_angle = 0
         arcade.set_background_color(arcade.color.WHITE)
 
 
@@ -28,7 +29,7 @@ class MotionBinding(arcade.View):
         self.sprite_list = arcade.SpriteList()
 
         img_blue = "./resources/blue_outline.png"
-        self.b_square = arcade.Sprite(img_blue , BLUE_SQUARE_SCALE)
+        self.b_square = shape.Shape(img_blue , BLUE_SQUARE_SCALE)
         self.b_square.center_x = self.width*0.5+10
         self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
@@ -61,25 +62,20 @@ class MotionBinding(arcade.View):
 
 
     def on_update(self, delta_time):
-        self.b_square.update()
+        self.b_square.update(self.width, self.height)
         self.sprite_list.update()
 
 
-    # need to us pos attribute (x,y)
-    # calculate xy position of outline center 10px from window center
-    # distance formula or circle geometry
-    # constant motion or A/D key control
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
-            self.angle=0
-            self.translate(self.angle)
+            self.b_square.translate(100, self.translate_angle, self.width, self.height)
+            self.translate_angle= self.translate_angle+10
         elif key == arcade.key.D:
             pass
         elif key == arcade.key.W:
             pass
         elif key == arcade.key.S:
             pass
-
 
 
     def on_key_release(self, key, key_modifiers):
