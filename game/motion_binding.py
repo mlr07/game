@@ -60,12 +60,14 @@ class MotionBinding(arcade.View):
         arcade.draw_text(CONTROL_ALPHA, 5, 7, (0,0,0), 14)
         arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
-
+    
+    # call translate as opposed to update?
     def on_update(self, delta_time):
         self.b_square.update(self.width, self.height)
         self.sprite_list.update()
 
 
+    # can angle be passed like the speed vector to change_x/y?
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
             self.b_square.translate(100, self.translate_angle, self.width, self.height)
@@ -83,7 +85,8 @@ class MotionBinding(arcade.View):
             pass
         elif key == arcade.key.D:
             pass
-
+    
+    # do translation here? or in the sprite?
     def translate(self, angle):
         self.b_square.center_x = 1*math.cos(angle)
         self.b_square.center_y = 1*math.sin(angle)
