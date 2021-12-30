@@ -25,3 +25,15 @@ class Shape(arcade.Sprite):
     def translate(self, radius, translate_angle, scrn_width, scrn_height):
         self.center_x = scrn_width*0.5+radius*math.cos(math.radians(translate_angle))
         self.center_y = scrn_height*0.5+radius*math.sin(math.radians(translate_angle))
+
+
+class Translate(arcade.Sprite):
+
+    def __init__(self, filename, sprite_scaling):
+        super().__init__(filename, sprite_scaling)
+
+        self.circle_angle = 0
+        self.circle_radius = 100
+        self.circle_speed = 0.008
+        self.circle_center_x = 400
+        self.circle_center_y = 400

@@ -63,7 +63,7 @@ class MotionBinding(arcade.View):
     
     # call translate as opposed to update?
     def on_update(self, delta_time):
-        self.b_square.update(self.width, self.height)
+        #self.b_square.update(self.width, self.height)
         self.sprite_list.update()
 
 
