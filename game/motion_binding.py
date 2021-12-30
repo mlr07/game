@@ -61,7 +61,6 @@ class MotionBinding(arcade.View):
         self.b_square.translate_update(self.A_pressed, self.D_pressed)
         self.sprite_list.update()
 
-    # can angle be passed like the speed vector to change_x/y?
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
             self.A_pressed = True
