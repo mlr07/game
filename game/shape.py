@@ -36,10 +36,17 @@ class Translate(arcade.Sprite):
         self.circle_radius = 20
         self.circle_speed = 0.030
 
-    def update(self):
+    def translate_update(self, A_state, D_state):
         '''logic for translating in a circle around a fixed point'''
-        self.center_x = 400+self.circle_radius*math.cos(self.circle_angle)
-        self.center_y = 400+self.circle_radius*math.sin(self.circle_angle)
-        self.circle_angle += self.circle_speed
+        if A_state and not D_state:
+            self.center_x = 400+self.circle_radius*math.cos(self.circle_angle)
+            self.center_y = 400+self.circle_radius*math.sin(self.circle_angle)
+            self.circle_angle -= self.circle_speed
+
+        if D_state and not A_state:
+            self.center_x = 400+self.circle_radius*math.cos(self.circle_angle)
+            self.center_y = 400+self.circle_radius*math.sin(self.circle_angle)
+            self.circle_angle += self.circle_speed
+
 
 

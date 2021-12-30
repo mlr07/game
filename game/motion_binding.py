@@ -20,6 +20,8 @@ class MotionBinding(arcade.View):
         self.b_square = None
         self.width = width
         self.height = height
+        self.A_pressed = False
+        self.D_pressed = False
         arcade.set_background_color(arcade.color.WHITE)
 
     def setup(self):
@@ -27,8 +29,8 @@ class MotionBinding(arcade.View):
 
         img_blue = "./resources/blue_outline.png"
         self.b_square = shape.Translate(img_blue , BLUE_SQUARE_SCALE)
-        #self.b_square.center_x = self.width*0.5+10
-        #self.b_square.center_y = self.height*0.5
+        self.b_square.center_x = self.width*0.5+20
+        self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
         
         # XY location of square corners, calculated in place
@@ -56,15 +58,15 @@ class MotionBinding(arcade.View):
         arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
     def on_update(self, delta_time):
-        self.b_square.update()
+        self.b_square.translate_update(self.A_pressed, self.D_pressed)
         self.sprite_list.update()
 
     # can angle be passed like the speed vector to change_x/y?
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
-            self.b_square.circle_angle -= self.b_square.circle_speed
+            self.A_pressed = True
         elif key == arcade.key.D:
-            self.b_square.circle_angle += self.b_square.circle_speed
+            self.D_pressed = True
         elif key == arcade.key.W:
             pass
         elif key == arcade.key.S:
@@ -72,9 +74,10 @@ class MotionBinding(arcade.View):
 
     def on_key_release(self, key, key_modifiers):
         if key == arcade.key.A:
-            pass
+            self.A_pressed = False
         elif key == arcade.key.D:
-            pass
+            self.D_pressed = False
+           
 
 def main():
     pass
