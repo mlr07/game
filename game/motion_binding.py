@@ -29,7 +29,7 @@ class MotionBinding(arcade.View):
         self.sprite_list = arcade.SpriteList()
 
         img_blue = "./resources/blue_outline.png"
-        self.b_square = shape.Shape(img_blue , BLUE_SQUARE_SCALE)
+        self.b_square = shape.Translate(img_blue , BLUE_SQUARE_SCALE)
         self.b_square.center_x = self.width*0.5+10
         self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
@@ -63,15 +63,14 @@ class MotionBinding(arcade.View):
     
     # call translate as opposed to update?
     def on_update(self, delta_time):
-        #self.b_square.update(self.width, self.height)
+        self.b_square.update()
         self.sprite_list.update()
 
 
     # can angle be passed like the speed vector to change_x/y?
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
-            self.b_square.translate(100, self.translate_angle, self.width, self.height)
-            self.translate_angle= self.translate_angle+10
+            pass
         elif key == arcade.key.D:
             pass
         elif key == arcade.key.W:
