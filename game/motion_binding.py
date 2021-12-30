@@ -11,7 +11,6 @@ CONTROL_MOVE = "Hold A or D to rotate blue lines"
 CONTROL_ALPHA = "Hold W or S to change alpha"
 CONTROL_PAUSE = "Hit ESC to pause"
 
-
 class MotionBinding(arcade.View):
     '''class for motion binding'''
 
@@ -31,7 +30,6 @@ class MotionBinding(arcade.View):
         #self.b_square.center_x = self.width*0.5+10
         #self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
-        #self.sprite_list.append(self.b_square)
         
         # XY location of square corners, calculated in place
         coords = [
@@ -48,7 +46,6 @@ class MotionBinding(arcade.View):
             sqr.angle = 45
             self.sprite_list.append(sqr)
 
-
     def on_draw(self):
         arcade.start_render()
         self.b_square.draw()
@@ -58,35 +55,29 @@ class MotionBinding(arcade.View):
         arcade.draw_text(CONTROL_ALPHA, 5, 7, (0,0,0), 14)
         arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
 
-    
-    # call translate as opposed to update?
     def on_update(self, delta_time):
         self.b_square.update()
         self.sprite_list.update()
 
-
     # can angle be passed like the speed vector to change_x/y?
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
-            pass
+            self.b_square.circle_angle -= self.b_square.circle_speed
         elif key == arcade.key.D:
-            pass
+            self.b_square.circle_angle += self.b_square.circle_speed
         elif key == arcade.key.W:
             pass
         elif key == arcade.key.S:
             pass
-
 
     def on_key_release(self, key, key_modifiers):
         if key == arcade.key.A:
             pass
         elif key == arcade.key.D:
             pass
-    
 
 def main():
     pass
-
 
 if __name__ == "__main__":
     main()
