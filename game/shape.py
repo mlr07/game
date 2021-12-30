@@ -40,6 +40,6 @@ class Translate(arcade.Sprite):
         '''logic for translating in a circle around a fixed point'''
         self.center_x = 400+self.circle_radius*math.cos(self.circle_angle)
         self.center_y = 400+self.circle_radius*math.sin(self.circle_angle)
-        #self.circle_angle += self.circle_speed
+        self.circle_angle += self.circle_speed
 
 
