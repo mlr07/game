@@ -1,6 +1,7 @@
 import arcade
 import math
 import shape
+import pause
 
 BLUE_SQUARE_SCALE = 1
 GRAY_SQUARE_SCALE = 1.6
@@ -50,6 +51,7 @@ class MotionBinding(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
+        arcade.set_background_color(arcade.color.WHITE)
         self.b_square.draw()
         self.sprite_list.draw()
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
@@ -70,6 +72,9 @@ class MotionBinding(arcade.View):
             pass
         elif key == arcade.key.S:
             pass
+        elif key == arcade.key.ESCAPE:
+            pause_scr = pause.Pause(self, self.width, self.height)
+            self.window.show_view(pause_scr)
 
     def on_key_release(self, key, key_modifiers):
         if key == arcade.key.A:
