@@ -33,15 +33,13 @@ class Translate(arcade.Sprite):
         super().__init__(filename, sprite_scaling)
 
         self.circle_angle = 0
-        self.circle_radius = 10
-        self.circle_speed = 0.008
-        self.circle_center_x = 400
-        self.circle_center_y = 400
+        self.circle_radius = 20
+        self.circle_speed = 0.030
 
     def update(self):
         '''logic for translating in a circle around a fixed point'''
-        self.center_x = self.circle_radius*math.cos(self.circle_angle)
-        self.center_y = self.circle_radius*math.sin(self.circle_angle)
+        self.center_x = 400+self.circle_radius*math.cos(self.circle_angle)
+        self.center_y = 400+self.circle_radius*math.sin(self.circle_angle)
         self.circle_angle += self.circle_speed
 
 

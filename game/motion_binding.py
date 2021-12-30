@@ -21,17 +21,15 @@ class MotionBinding(arcade.View):
         self.b_square = None
         self.width = width
         self.height = height
-        self.translate_angle = 0
         arcade.set_background_color(arcade.color.WHITE)
-
 
     def setup(self):
         self.sprite_list = arcade.SpriteList()
 
         img_blue = "./resources/blue_outline.png"
         self.b_square = shape.Translate(img_blue , BLUE_SQUARE_SCALE)
-        self.b_square.center_x = self.width*0.5+10
-        self.b_square.center_y = self.height*0.5
+        #self.b_square.center_x = self.width*0.5+10
+        #self.b_square.center_y = self.height*0.5
         self.b_square.angle = 45
         #self.sprite_list.append(self.b_square)
         
@@ -85,11 +83,6 @@ class MotionBinding(arcade.View):
         elif key == arcade.key.D:
             pass
     
-    # do translation here? or in the sprite?
-    def translate(self, angle):
-        self.b_square.center_x = 1*math.cos(angle)
-        self.b_square.center_y = 1*math.sin(angle)
-
 
 def main():
     pass
