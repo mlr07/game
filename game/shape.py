@@ -21,11 +21,6 @@ class Shape(arcade.Sprite):
         elif self.top > scr_height-1:
             self.top = scr_height-1
 
-    # does this need to be here?
-    def translate(self, radius, translate_angle, scrn_width, scrn_height):
-        self.center_x = scrn_width*0.5+radius*math.cos(math.radians(translate_angle))
-        self.center_y = scrn_height*0.5+radius*math.sin(math.radians(translate_angle))
-
 
 class Translate(arcade.Sprite):
 
