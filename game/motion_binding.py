@@ -63,15 +63,14 @@ class MotionBinding(arcade.View):
 
     def on_update(self, delta_time):
         self.b_square.translate_update(self.A_pressed, self.D_pressed)
-        #self.sprite_list.update()
         self.alpha_update(self.sprite_list, self.W_pressed, self.S_pressed)
 
     def alpha_update(self, sprite_list, W_state, S_state):
         if W_state and not S_state:
-            for i in self.sprite_list:
+            for i in sprite_list:
                 i.alpha+=1
         if S_state and not W_state:
-            for i in self.sprite_list:
+            for i in sprite_list:
                 i.alpha-=1
 
     def on_key_press(self, key, key_modifiers):
