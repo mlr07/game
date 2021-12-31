@@ -23,6 +23,8 @@ class MotionBinding(arcade.View):
         self.height = height
         self.A_pressed = False
         self.D_pressed = False
+        self.W_pressed = False
+        self.S_pressed = False
         arcade.set_background_color(arcade.color.WHITE)
 
     def setup(self):
@@ -61,7 +63,16 @@ class MotionBinding(arcade.View):
 
     def on_update(self, delta_time):
         self.b_square.translate_update(self.A_pressed, self.D_pressed)
-        self.sprite_list.update()
+        #self.sprite_list.update()
+        self.alpha_update(self.W_pressed, self.S_pressed)
+
+    def alpha_update(self, self.W_pressed, self.A_pressed):
+        if self.W_pressed and not self.S_pressed:
+            for i in self.sprite_list():
+                i.alpha+=1
+        if self.S_pressed and not self.W_pressed:
+            for i in self.sprite_list():
+                i.alpha-=1
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
@@ -69,9 +80,9 @@ class MotionBinding(arcade.View):
         elif key == arcade.key.D:
             self.D_pressed = True
         elif key == arcade.key.W:
-            pass
+            self.W_pressed = True
         elif key == arcade.key.S:
-            pass
+            self.S_pressed = True
         elif key == arcade.key.ESCAPE:
             pause_scr = pause.Pause(self, self.width, self.height)
             self.window.show_view(pause_scr)
@@ -81,7 +92,10 @@ class MotionBinding(arcade.View):
             self.A_pressed = False
         elif key == arcade.key.D:
             self.D_pressed = False
-           
+        elif key == arcade.key.W:
+            self.W_pressed = False
+        elif key == arcade.key.S:
+            self.S_pressed = False
 
 def main():
     pass
