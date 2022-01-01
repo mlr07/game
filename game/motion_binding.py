@@ -68,10 +68,16 @@ class MotionBinding(arcade.View):
     def alpha_update(self, sprite_list, W_state, S_state):
         if W_state and not S_state:
             for i in sprite_list:
-                i.alpha+=1
+                if i.alpha >= 255:
+                    pass
+                else:
+                    i.alpha+=1
         if S_state and not W_state:
             for i in sprite_list:
-                i.alpha-=1
+                if i.alpha <= 0:
+                    pass
+                else:
+                    i.alpha-=1
 
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.A:
