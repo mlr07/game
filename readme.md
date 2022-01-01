@@ -2,8 +2,8 @@
 
 small game that attempts to reproduce a set of classic visual illusions:
 
-1. [x] motion binding
-2. [ ] breathing square
+1. [x] breathing square
+2. [x] motion binding
 3. [x] hidden bird
 4. [x] arrow lengths
 
@@ -15,7 +15,7 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 ![breathing square](resources/gifs/breathing_square.gif)
 
 ## motion binding
-![]()
+![motion binding](resources/gifs/motion_binding.gif)
 
 ## hidden bird
 ![hidden bird](resources/gifs/hidden_bird.gif)
@@ -27,9 +27,6 @@ illusion 4 is based on the [muller-lyer arrow illusion](https://en.wikipedia.org
 ## TODO
 - [x] inherit screen dims from start.py
 - [x] implement pause and reset with esc
-- [x] implement hidden bird
 - [x] implement exit game
-- [ ] implement motion binding
-- [ ] continous outline translation
 - [ ] check variable assignment in classes
 - [x] record gifs and add to readme
