@@ -10,6 +10,7 @@ TITLE = "Motion Binding"
 CONTROL_MOVE = "Hold A or D to rotate blue lines"
 CONTROL_ALPHA = "Hold W or S to change alpha"
 CONTROL_PAUSE = "Hit ESC to pause"
+CONTROL_BCKGRND = "Hit Q to toggle background color"
 
 class MotionBinding(arcade.View):
     '''class for motion binding'''
@@ -54,10 +55,10 @@ class MotionBinding(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
-        #arcade.set_background_color(arcade.color.GRAY)
         self.b_square.draw()
         self.sprite_list.draw()
         arcade.draw_text(TITLE, 5, 775, (0,0,0), 18)
+        arcade.draw_text(CONTROL_BCKGRND, 5, 53, (0,0,0), 14)
         arcade.draw_text(CONTROL_MOVE, 5, 30, (0,0,0), 14)
         arcade.draw_text(CONTROL_ALPHA, 5, 7, (0,0,0), 14)
         arcade.draw_text(CONTROL_PAUSE, 635, 7, (0,0,0), 14)
